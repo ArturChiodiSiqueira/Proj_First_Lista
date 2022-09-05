@@ -29,7 +29,7 @@ namespace ProjFirstLista
 
             Console.Write("\nInforme o nome que deseja remover: ");
             string nomeremovido = Console.ReadLine();
-            MinhaLista.pop(nomeremovido);
+            MinhaLista.Pop(nomeremovido);
 
             Console.Clear();
 

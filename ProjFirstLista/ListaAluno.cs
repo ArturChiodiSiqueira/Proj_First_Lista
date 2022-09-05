@@ -93,7 +93,7 @@ namespace ProjFirstLista
             }
         }
 
-        public void pop(string nomeRemovido)
+        public void Pop(string nomeRemovido)
         {
             if (Vazia())
                 Console.WriteLine("Lista Vazia! Impossivel remover.");
