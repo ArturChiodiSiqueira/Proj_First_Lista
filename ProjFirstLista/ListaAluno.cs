@@ -97,10 +97,49 @@ namespace ProjFirstLista
         {
             if (Vazia())
                 Console.WriteLine("Lista Vazia! Impossivel remover.");
+
             else
             {
-                HEAD = HEAD.Proximo;
-                Console.WriteLine("Aluno: " + nomeRemovido + " removido!");
+                if (HEAD.Nome == nomeRemovido)
+                {
+                    HEAD = HEAD.Proximo;
+                    Console.WriteLine("Aluno: " + nomeRemovido + " removido!");
+                }
+                else
+                {
+                    Aluno aux1, aux2;
+                    aux1 = HEAD;
+                    aux2 = HEAD;
+                    do
+                    {
+                        if (aux1.Nome != nomeRemovido)
+                        {
+                            aux2 = aux1;
+                            aux1 = aux1.Proximo;
+
+                            if(aux1 == null)
+                            {
+                                Console.WriteLine("nome nao encontrado.");
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            if(aux1 == TAIL)
+                            {
+                                TAIL = aux2;
+                                Console.WriteLine("Aluno: " + nomeRemovido + " removido!");
+                                break;
+                            }
+                            else
+                            {
+                                aux2.Proximo = aux1.Proximo;
+                                Console.WriteLine("Aluno: " + nomeRemovido + " removido!");
+                                break;
+                            }
+                        }
+                    } while (true);
+                }
             }
             Console.WriteLine("\nAperte qualquer coisa para seguir.");
             Console.ReadKey();
